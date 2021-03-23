@@ -1,0 +1,12 @@
+version: '2.4'
+
+services:
+  urlwatch:
+    image: ghcr.io/vs-x/urlwatch-docker:navigate
+    container_name: urlwatch
+    user: 1000:1000
+    cap_add: # optional, to enable sandboxing in Chromium
+      - SYS_ADMIN
+    volumes:
+      - /ContainerData/urlwatch:/home/urlwatch/.urlwatch
+    restart: unless-stopped
