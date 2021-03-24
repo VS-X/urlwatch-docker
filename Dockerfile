@@ -1,19 +1,15 @@
 FROM python:slim
 
-RUN apt-get update \ 
-  && apt-get install -y --no-install-recommends python3-cryptography \
-  python3-appdirs \ 
-  python-cssselect \
-  python-keyring \ 
-  python-lxml \
-  python3-minidb \
-  python3-requests  \
-  && rm -rf /var/cache/apt/lists
-
 RUN useradd -ms /bin/bash urlwatch
 USER urlwatch
 
 RUN pip3 install \ 
+  appdirs \
+  cssselect \
+  keyring \
+  lxml \
+  minidb \
+  requests \
   pyyaml    \
   chump     \
   urlwatch  \

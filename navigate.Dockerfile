@@ -7,23 +7,22 @@ RUN apt-get update \
   libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 \
   libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
   libxcursor1 libxdamage1 libxss1 libxtst6 libappindicator1 libnss3 libasound2 libatk1.0-0 libc6 \
-  python3-cryptography \
-  python3-appdirs \ 
-  python-cssselect \
-  python-keyring \ 
-  python-lxml \
-  python3-minidb \
-  python3-requests  \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -ms /bin/bash urlwatch
 USER urlwatch
 
 RUN pip3 install \ 
+  appdirs \
+  cssselect \
+  keyring \
+  lxml \
+  minidb \
+  requests \
   pyyaml    \
   chump     \
   urlwatch  \
-  yacron    \
+  yacron \
   pyppeteer
 
 ENV PATH="/home/urlwatch/.local/bin:$PATH"
