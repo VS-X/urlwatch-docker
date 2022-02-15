@@ -3,12 +3,8 @@ name: Build image
 on:
   push:
     branches: master
-
-  # run every month to keep this sort-of up-to-date
-  # would have been better to re-run when caddy or plugins update, but it doesn't seem easily possible
-  schedule:
-    - cron: '0 0 1 * *'
-
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
