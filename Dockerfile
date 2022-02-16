@@ -6,6 +6,7 @@ USER urlwatch
 RUN pip3 install \ 
   appdirs \
   cssselect \
+  jq \
   keyring \
   lxml \
   minidb \
