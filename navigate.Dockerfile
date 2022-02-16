@@ -1,4 +1,4 @@
-FROM python:slim
+FROM python:slim-buster
 
 # all the libraries to run Pyppeteer (headless Chromium)
 RUN apt-get update \ 
@@ -15,6 +15,7 @@ USER urlwatch
 RUN pip3 install \ 
   appdirs \
   cssselect \
+  jq \
   keyring \
   lxml \
   minidb \
